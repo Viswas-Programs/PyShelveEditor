@@ -160,7 +160,7 @@ def openFile(PID: int):
         try: 
             with shelve.open(filepath+".dat") as reader: DICT = dict(reader)
             if not len(DICT.keys()) or not len(DICT.values()): raise Exception
-        except Exception: messagebox.showerror("Cannot read file!", "The selected file cannot be read!", INSTANCES[PID])
+        except Exception: messagebox.showerror("Cannot read file!", "The selected file cannot be read!")
         else: dictView(PID, DICT, filepath)
     else: dictView(PID, DICT, filepath)
 
